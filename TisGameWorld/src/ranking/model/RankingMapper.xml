@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper 
+   namespace="ranking.model.RankingMapper"><!-- =구분하기 위한 논리적인 이름 패키지명과 다르게 해도 된다. -->
+   
+	
+	<!-- [1] 글쓰기 -->
+   <insert id="insertRanking" parameterType="ranking.model.RankingVO"><!-- =board.model.BoardVO문이 들어온다 -->
+   		insert into tisgame_GAME2_RANK values(#{GAME2_RANK_SCORE},#{MEMBER_ID})
+   </insert>
+   
+   
+
+   
+   <!-- [2] 글목록 가져오기 select문은 반드시 resultType을 기술해야한다.
+   		이 때 ArrayList로 가져오더라도 resultType에는 VO객체의 타입을 기술한다 
+   		글목록 가져올 때 해당하는 글의 댓글수도 같이 가져와 보여주기
+   		그러려면 BoardVO에 댓글수를 담아줄 프로퍼티가 필요하다.
+   		-->
+   <select id="listRanking" resultType="Ranking"><!-- board.model.BoardVO의 alias를 board로 지정함 (mybatis-config.xml에서) -->
+		select distinct * from
+		(select row_number() over(order by GAME2_RANK_SCORE desc) rn, tisgame_GAME2_RANK.*
+		from tisgame_GAME2_RANK)
+		where rn between 1 and 5 order by rn asc
+   </select>
+   
+   <select id="totalRanking" resultType="Ranking"><!-- board.model.BoardVO의 alias를 board로 지정함 (mybatis-config.xml에서) -->
+		select distinct * from
+		(select row_number() over(order by GAME2_RANK_SCORE desc) rn, tisgame_GAME2_RANK.*
+		from tisgame_GAME2_RANK)
+		order by rn asc
+   </select>
+   
+
+ 
+</mapper>
