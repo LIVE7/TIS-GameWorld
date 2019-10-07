@@ -5,7 +5,7 @@
     	auth="Container"
     	type="javax.sql.DataSource"
     	driverClassName="oracle.jdbc.driver.OracleDriver"
-    	url="jdbc:oracle:thin:@jobs.cbflhtwx5pyr.ap-northeast-2.rds.amazonaws.com:1521:ORCL"
+    	url="jdbc:oracle:thin:@localhost:1521:XE"
     	username="mydev"
-    	password="tigertiger" />
+    	password="tiger" />
 </Context>
