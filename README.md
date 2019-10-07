@@ -35,13 +35,14 @@
 
 
 ## 5. 사용법
-### 5.1. 개발 언어 & 기술
+### 5.1. 개발 환경 & 개발 툴
 - Programing Language : HTML, CSS, JavaScript, jQuery, Java 8, JSP, Servlet
 - Framework : BootStrap, MyBati
 - Database : Oracle Database 11g Express 
 - Server : Apache Tomcat 8.5 
 - OS: Windows 10
 
+-----------------------------------------------------------------------------
 
 - Tool : Eclipse, Pingendo 
 - DB Modeling Tool : ERD Cloud 
