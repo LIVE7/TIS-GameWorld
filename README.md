@@ -78,9 +78,9 @@
 ## 6. 스크린샷
 
 ### 6.1. Main 화면
- ![Main](./screenshot/gw1.png)
+ ![Main](./screenshot/gw1.PNG)
  -------------
 
 ### 6.2. Game 화면
- ![Game](./screenshot/gw2.png)
+ ![Game](./screenshot/gw2.PNG)
  -------------
