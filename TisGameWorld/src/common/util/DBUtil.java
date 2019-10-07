@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class DBUtil {
 	
-	private static String url="jdbc:oracle:thin:@jobs.cbflhtwx5pyr.ap-northeast-2.rds.amazonaws.com:1521:ORCL";
+	private static String url="jdbc:oracle:thin:@localhost:1521:XE";
 	private static String user="mydev";
-	private static String pwd="tigertiger";
+	private static String pwd="tiger";
 	
 	static {
 		
