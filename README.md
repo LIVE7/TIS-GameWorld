@@ -53,7 +53,10 @@
 ### 5.2. 실행 방법
 #### 5.2.1 실행환경 세팅
 ```
-# 1. node.js와 MySQL 설치
+# 1. Eclipse와 MySQL 설치
+# 2. 이클립스에 프로젝트를 import 경로가 중요하니 확인해주시기 바립니다.
+- ojdbc6.jar, ckeditor-java-core-3.5.3.jar, cos.jar, jstl.jar, standard.jar 
+총 5개의 jar 파일이 lib 폴더에 포함되어 있습니다. 
 # 2. MySQL에 "rhythmGame_data" 스키마 생성 / 해당 스키마 안에서 "db_qeury.sql" 실행 (테이블 생성과 컬럼 추가)
 # 3. server.js 를 열어 본인의 MySQL user와 password 값 입력.
 # 4. 터미널을 열고 이 프로젝트가 있는 경로로 들어가 "npm install" 입력 후 실행 (node 실행을 위한 module들 설치) 
