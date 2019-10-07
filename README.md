@@ -53,20 +53,23 @@
 ### 5.2. 실행 방법
 #### 5.2.1 실행환경 세팅
 ```
-# 1. Eclipse와 MySQL 설치
-# 2. 이클립스에 프로젝트를 import 경로가 중요하니 확인해주시기 바립니다.
-- ojdbc6.jar, ckeditor-java-core-3.5.3.jar, cos.jar, jstl.jar, standard.jar 
-총 5개의 jar 파일이 lib 폴더에 포함되어 있습니다. 
-# 2. MySQL에 "rhythmGame_data" 스키마 생성 / 해당 스키마 안에서 "db_qeury.sql" 실행 (테이블 생성과 컬럼 추가)
-# 3. server.js 를 열어 본인의 MySQL user와 password 값 입력.
-# 4. 터미널을 열고 이 프로젝트가 있는 경로로 들어가 "npm install" 입력 후 실행 (node 실행을 위한 module들 설치) 
-# 5. 잠시 후 module 설치가 다 끝났다면 실행환경 세팅 완료. 
+# 1. 이클립스에 해당 프로젝트를 import 합니다.
+- mybatis.jar, ojdbc6.jar, taglibs-standard-compat-1.2.5.jar, taglibs-standard-impl-1.2.5.jar, taglibs-standard-jstlel-1.2.5.jar, taglibs-standard-spec-1.2.5.jar, tomcat-dbcp.jar, tomcat-jdbc.jar 
+총 8개의 jar 파일이 lib 폴더에 포함되어 있습니다. 
+# 2. connection pool이 작동하는지 connect 여부를 확인합니다.
+- common/config 폴더의 db.properties 파일, META-INF 폴더의 context.xml 파일, common/util 폴더의 DBUtil.java 파일에서 설정 값을 확인해주세요.
+# 3. WebContent 폴더에 있는 oracle.sql로 테이블을 만드십시오. 
+- 총 8개의 테이블이 있지만 해당 프로젝트에는 FLAP JELLYFISH 게임만 이용할 수 있기 때문에 랭킹 관련 테이블은 Flap Jellyfish랭킹 부분만 생성하시면 됩니다.
+# 4. 이렇게 하면 세팅은 완료됩니다.
 ```
 #### 5.2.2 실행
 ```
-# 1. 터미널에서 이 프로젝트가 있는 경로로 들어가 "node server.js" 를 입력
-# 2. 서버가 실행됐다는 알림이 뜨면 웹 브라우저의 주소창에 "localhost:8081" 입력
-# 3. 게임이 실행됨.
+# 1. 설정이 완료되면 server를 시작하고, 웹 사이트 주소 창에 http://localhost:8080/tisgameworld/main.do를 입력하시면 됩니다. 
+- 포트 번호(8080)는 본인의 컴퓨터에 설정된 톰캣의 포트번호로 변경해주시기 바랍니다. 
+(WEB-INF 폴더의 Command.properties 파일을 여시면 사이트의 url이 열거되어 있습니다.)
+# 2. 회원가입을 해야 원활한 사이트 이용이 가능합니다.
+- admin으로 가입하면 해당 계정은 관리자 계정이 됩니다.
+# 3. 사이트를 이용하시거나 게임을 실행하시면 됩니다.
 ```
 
 
