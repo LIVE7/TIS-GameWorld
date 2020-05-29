@@ -9,6 +9,15 @@ CREATE TABLE tisgame_jellyfish_memo(
 
 create sequence tisgame_jellyfish_memo_seq nocache;
 
+CREATE TABLE jellyfish_memo(
+  idx number(4) primary key,
+  name varchar2(20) not null,
+  msg varchar2(100),
+  wdate date default sysdate
+  );
+  
+create sequence jellyfish_memo_seq nocache;
+
 -- 자유게시판
 
 create table tisgame_board(
