@@ -1,13 +1,13 @@
 
 -- 해파리 게임의 댓글
-CREATE TABLE jellyfish_memo(
+CREATE TABLE tisgame_jellyfish_memo(
   idx number(4) primary key,
   name varchar2(20) not null,
   msg varchar2(100),
   wdate date default sysdate
   );
 
-create sequence jellyfish_memo_seq nocache;
+create sequence tisgame_jellyfish_memo_seq nocache;
 
 -- 자유게시판
 
@@ -29,11 +29,11 @@ create sequence tisgame_board_seq nocache;
 
 create table tisgame_reply(
 	num number(8) primary key,
-	userid varchar2(30) not null,
+	userid varchar2(255) not null,
 	content varchar2(500),
 	wdate date default sysdate,
 	idx_fk number(3) not null,
-	constraint tisgame_reply_userid_fk foreign key (userid) references tisgame_MEMBER(MEMBER_NAME),
+	constraint tisgame_reply_userid_fk foreign key (userid) references tisgame_MEMBER(MEMBER_ID),
 	constraint tisgame_reply_idx_fk foreign key (idx_fk) references tisgame_board(idx)
 );
 
@@ -86,5 +86,8 @@ CREATE TABLE tisgame_GAME1_RANK(
   GAME1_RANK_SCORE VARCHAR(255),
   MEMBER_ID VARCHAR2(20),
 	CONSTRAINT GAME1_RANK_MEMBER_ID_FK FOREIGN KEY (MEMBER_ID)
-    REFERENCES MEMBER(MEMBER_ID) ON DELETE CASCADE
+    REFERENCES tisgame_MEMBER(MEMBER_ID) ON DELETE CASCADE
 );
+
+------------
+
